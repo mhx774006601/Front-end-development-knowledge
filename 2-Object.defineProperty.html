@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script src="./src/vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="app">
+			<button id="btn">改变数据</button>
+			<h2 id="title">这是标题</h2>
+		</div>
+
+		<script>
+			var data = {
+				title: '新闻'
+			}
+
+			// 使用数据的时候，要先对数据进行劫持（代理）
+			//使用Object.defineProperty劫持数据，把属性转成访问器的方式
+			/*
+				getter
+					获取属性触发的
+				setter
+					设置属性触发的
+			*/
+
+			var title = document.getElementById('title');
+			var btn = document.getElementById('btn');
+
+			title.innerHTML = data.title;
+
+
+
+
+			btn.onclick = function (){
+				data.title = '数据变了';
+				//title.innerHTML = data.title;
+			}
+
+
+
+		</script>
+
+	</body>
+</html>
